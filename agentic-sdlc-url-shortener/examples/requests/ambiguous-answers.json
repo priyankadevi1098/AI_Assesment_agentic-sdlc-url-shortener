@@ -1,0 +1,15 @@
+{
+  "name": "url-shortener-ambiguous",
+  "mode": "greenfield",
+  "requirement": "Build a link shortener for our team.",
+  "acceptance_criteria": [
+    "It works for our use case"
+  ],
+  "answers": {
+    "persistence": "SQLite file alongside the service, matching the greenfield example",
+    "short_code_length": "7 characters, URL-safe base62",
+    "destination_validation": "HTTP(S) only, same rule as the greenfield example",
+    "analytics": "per-link click count and destination, no aggregate dashboard needed",
+    "expiration": "not required for this scenario"
+  }
+}

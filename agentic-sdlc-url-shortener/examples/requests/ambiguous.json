@@ -1,0 +1,8 @@
+{
+  "name": "url-shortener-ambiguous",
+  "mode": "greenfield",
+  "requirement": "Build a link shortener for our team.",
+  "acceptance_criteria": [
+    "It works for our use case"
+  ]
+}

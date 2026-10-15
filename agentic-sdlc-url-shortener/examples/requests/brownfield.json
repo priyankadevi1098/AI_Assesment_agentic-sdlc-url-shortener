@@ -1,0 +1,13 @@
+{
+  "name": "url-shortener-add-expiration",
+  "mode": "brownfield",
+  "requirement": "Add optional link expiration to the existing generated URL-shortener service. A link may be created with an optional expires_at timestamp; an expired short code must return a 410 Gone instead of redirecting. Preserve all existing links, the existing redirect/health/analytics APIs and their current response shapes for links created without an expiration. Migrate the existing SQLite schema safely, without losing any existing link or click-count data, and add tests covering both pre-existing (never-expiring) links and newly created expiring links.",
+  "acceptance_criteria": [
+    "A previously created link with no expiration continues to redirect exactly as before",
+    "A new link can be created with an expires_at timestamp in the future",
+    "Requesting an expired short code returns 410 Gone, not a redirect",
+    "The SQLite schema migration preserves every existing link row and its click count",
+    "Existing API response shapes for non-expiring links are unchanged",
+    "Analytics for an expired link still reports its historical click count"
+  ]
+}

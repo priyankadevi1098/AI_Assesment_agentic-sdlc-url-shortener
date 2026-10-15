@@ -1,0 +1,15 @@
+{
+  "name": "url-shortener-greenfield",
+  "mode": "greenfield",
+  "requirement": "Build a URL-shortener service: create short links from valid HTTP(S) destination URLs, redirect a short code to its destination, persist links in SQLite, record a click count per link, expose a health endpoint and a basic analytics endpoint, validate destination URLs are HTTP(S), and return a clear error for unknown short codes.",
+  "acceptance_criteria": [
+    "POST a valid HTTP(S) URL and receive a short code plus the full short link",
+    "GET the short link and receive an HTTP redirect to the original destination",
+    "Each redirect increments a persisted click count for that short code",
+    "GET an analytics endpoint for a short code returns its destination and click count",
+    "GET a health endpoint returns a 200 status when the service is reachable",
+    "POST a non-HTTP(S) or malformed URL is rejected with a 4xx response and an explanatory error message",
+    "GET an unknown short code returns a 404 response rather than a redirect",
+    "Links persist across service restarts via the SQLite database file"
+  ]
+}
